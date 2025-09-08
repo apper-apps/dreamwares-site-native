@@ -17,8 +17,8 @@ const NavItem = ({ href, children, isActive = false, onClick, className }) => {
       href={href}
       onClick={handleClick}
 className={cn(
-        "text-muted hover:text-primary transition-colors duration-200 font-medium",
-        isActive && "text-primary",
+        "text-cyber-silver hover:text-electric-blue transition-all duration-300 font-semibold relative group cyber-nav-link",
+        isActive && "text-electric-blue cyber-nav-active",
         className
       )}
     >

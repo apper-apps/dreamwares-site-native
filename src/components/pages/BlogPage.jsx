@@ -62,48 +62,58 @@ const BlogPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+<div className="min-h-screen bg-gradient-to-br from-deep-space via-void-black to-cyber-dark relative">
+      {/* Futuristic Background Effects */}
+      <div className="fixed inset-0 cyber-grid opacity-15 pointer-events-none"></div>
+      <div className="fixed inset-0 bg-gradient-radial from-electric-blue/5 via-transparent to-neon-purple/5 animate-pulse pointer-events-none"></div>
       <Header />
       
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="py-20 bg-surface">
+<section className="py-24 bg-gradient-to-br from-void-black/50 via-cyber-dark to-deep-space relative">
+          <div className="absolute inset-0 cyber-grid opacity-20"></div>
           <Container>
-            <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <div className="text-center mb-16 relative z-10">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 cyber-text-glow">
                 Our{" "}
-                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-electric-blue via-neon-cyan to-holographic-purple bg-clip-text text-transparent animate-gradient cyber-text-pulse">
                   Blog
                 </span>
               </h1>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              <div className="absolute inset-0 bg-gradient-to-r from-electric-blue/20 to-neon-cyan/20 blur-3xl animate-pulse -z-10"></div>
+              <p className="text-2xl text-cyber-silver max-w-4xl mx-auto cyber-text-subtle">
                 Insights, tutorials, and thought leadership from our team of experts
               </p>
             </div>
 
             {/* Search and Filters */}
             <div className="flex flex-col lg:flex-row gap-6 items-center justify-between mb-12">
-              {/* Search Bar */}
+{/* Search Bar */}
               <div className="relative w-full lg:w-96">
-                <ApperIcon name="Search" className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <ApperIcon name="Search" className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-electric-blue animate-pulse" />
                 <input
                   type="text"
                   placeholder="Search articles..."
                   value={searchTerm}
                   onChange={handleSearch}
-                  className="w-full pl-10 pr-4 py-3 bg-background border border-primary/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors"
+                  className="w-full pl-12 pr-6 py-4 bg-void-black/80 border border-electric-blue/30 rounded-lg text-white placeholder-cyber-silver focus:outline-none focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300 cyber-input"
                 />
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-electric-blue/5 to-transparent opacity-0 focus-within:opacity-100 animate-pulse pointer-events-none"></div>
               </div>
 
               {/* Category Filters */}
-              <div className="flex flex-wrap gap-2">
+<div className="flex flex-wrap gap-3">
                 {categories.map((category) => (
                   <Button
                     key={category}
                     variant={selectedCategory === category ? "primary" : "outline"}
                     size="sm"
                     onClick={() => handleCategoryFilter(category)}
-                    className="text-sm"
+                    className={`text-sm font-medium transition-all duration-300 ${
+                      selectedCategory === category 
+                        ? "cyber-button-active bg-gradient-to-r from-electric-blue to-neon-cyan border-0" 
+                        : "cyber-button-outline border-electric-blue/30 text-cyber-silver hover:border-electric-blue hover:text-electric-blue"
+                    }`}
                   >
                     {category}
                   </Button>
@@ -117,35 +127,42 @@ const BlogPage = () => {
         <section className="py-20">
           <Container>
             {loading ? (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                 {[1, 2, 3, 4, 5, 6].map((i) => (
-                  <div key={i} className="animate-pulse">
-                    <div className="h-64 bg-surface rounded-lg mb-4"></div>
-                    <div className="h-4 bg-surface rounded w-3/4 mb-2"></div>
-                    <div className="h-4 bg-surface rounded w-1/2"></div>
+                  <div key={i} className="animate-pulse cyber-loading-card">
+                    <div className="h-72 bg-gradient-to-br from-void-black/80 to-cyber-dark/80 rounded-xl mb-6 border border-electric-blue/20 relative overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-r from-electric-blue/10 to-neon-cyan/10 animate-pulse"></div>
+                    </div>
+                    <div className="h-5 bg-gradient-to-r from-electric-blue/20 to-neon-cyan/20 rounded-lg w-3/4 mb-3"></div>
+                    <div className="h-4 bg-gradient-to-r from-electric-blue/10 to-neon-cyan/10 rounded-lg w-1/2"></div>
                   </div>
                 ))}
               </div>
             ) : filteredPosts.length > 0 ? (
               <>
-                <div className="mb-8">
-                  <p className="text-gray-400">
+<div className="mb-10">
+                  <p className="text-cyber-silver text-lg cyber-text-subtle">
+                    <span className="inline-block w-2 h-2 bg-electric-blue rounded-full mr-2 animate-pulse"></span>
                     Showing {filteredPosts.length} article{filteredPosts.length !== 1 ? 's' : ''}
                     {selectedCategory !== 'All' && ` in ${selectedCategory}`}
                     {searchTerm && ` for "${searchTerm}"`}
+                    <span className="inline-block w-2 h-2 bg-neon-cyan rounded-full ml-2 animate-pulse"></span>
                   </p>
                 </div>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                   {filteredPosts.map((post) => (
-                    <BlogCard key={post.Id} post={post} />
+                    <div key={post.Id} className="cyber-blog-card-wrapper">
+                      <BlogCard post={post} />
+                    </div>
                   ))}
                 </div>
               </>
             ) : (
-              <div className="text-center py-20">
-                <ApperIcon name="FileText" className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                <h3 className="text-xl text-white mb-2">No articles found</h3>
-                <p className="text-gray-400 mb-6">
+<div className="text-center py-24 relative">
+                <div className="absolute inset-0 bg-gradient-radial from-electric-blue/5 via-transparent to-transparent animate-pulse"></div>
+                <ApperIcon name="FileText" className="w-20 h-20 text-electric-blue/60 mx-auto mb-6 animate-pulse" />
+                <h3 className="text-2xl text-white mb-4 cyber-text-glow">No articles found</h3>
+                <p className="text-cyber-silver text-lg mb-8 cyber-text-subtle">
                   {searchTerm || selectedCategory !== 'All'
                     ? 'Try adjusting your search or filter criteria.'
                     : 'No blog posts are available at the moment.'}
@@ -157,6 +174,7 @@ const BlogPage = () => {
                       setSearchTerm('');
                       setSelectedCategory('All');
                     }}
+                    className="cyber-button-secondary"
                   >
                     Clear Filters
                   </Button>

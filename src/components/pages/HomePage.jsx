@@ -11,9 +11,13 @@ import CTASection from "@/components/organisms/CTASection";
 import Footer from "@/components/organisms/Footer";
 const HomePage = () => {
   return (
-    <div className="min-h-screen">
+<div className="min-h-screen bg-gradient-to-br from-deep-space via-void-black to-cyber-dark relative">
+      {/* Global Futuristic Effects */}
+      <div className="fixed inset-0 cyber-grid opacity-10 pointer-events-none z-0"></div>
+      <div className="fixed inset-0 bg-gradient-radial from-electric-blue/5 via-transparent to-neon-purple/5 animate-pulse pointer-events-none z-0"></div>
+      
       <Header />
-<main>
+      <main className="relative z-10">
         <HeroSection />
         <MetricsSection />
         <ComparisonSection />

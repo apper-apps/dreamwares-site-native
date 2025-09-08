@@ -75,110 +75,112 @@ const [hoveredNode, setHoveredNode] = useState(null);
     ]
   };
 
-  const getThemeColors = (theme) => {
+const getThemeColors = (theme) => {
     switch (theme) {
       case "red":
         return {
           primary: "from-red-500 to-red-600",
           secondary: "from-red-500/20 to-red-600/20",
           text: "text-red-400",
-          border: "border-red-500/30",
-          glow: "shadow-red-500/20"
+          border: "border-red-500/40",
+          glow: "shadow-red-500/30 cyber-glow-sm"
         };
       case "yellow":
         return {
-          primary: "from-yellow-500 to-orange-500",
-          secondary: "from-yellow-500/20 to-orange-500/20",
-          text: "text-yellow-400",
-          border: "border-yellow-500/30",
-          glow: "shadow-yellow-500/20"
+          primary: "from-energy-yellow to-orange-500",
+          secondary: "from-energy-yellow/20 to-orange-500/20",
+          text: "text-energy-yellow",
+          border: "border-energy-yellow/40",
+          glow: "shadow-energy-yellow/30 cyber-glow-sm"
         };
       case "blue":
         return {
-          primary: "from-blue-500 to-green-500",
-          secondary: "from-blue-500/20 to-green-500/20",
-          text: "text-blue-400",
-          border: "border-blue-500/30",
-          glow: "shadow-blue-500/20"
+          primary: "from-electric-blue to-neon-cyan",
+          secondary: "from-electric-blue/20 to-neon-cyan/20",
+          text: "text-electric-blue",
+          border: "border-electric-blue/40",
+          glow: "shadow-electric-blue/30 cyber-glow"
         };
       default:
         return {
-          primary: "from-gray-500 to-gray-600",
-          secondary: "from-gray-500/20 to-gray-600/20",
-          text: "text-gray-400",
-          border: "border-gray-500/30",
-          glow: "shadow-gray-500/20"
+          primary: "from-cyber-silver to-electric-blue",
+          secondary: "from-cyber-silver/20 to-electric-blue/20",
+          text: "text-cyber-silver",
+          border: "border-cyber-silver/40",
+          glow: "shadow-cyber-silver/30 cyber-glow-sm"
         };
     }
   };
 
 return (
-    <section ref={sectionRef} className="py-20 bg-surface overflow-hidden">
+<section ref={sectionRef} className="py-24 bg-gradient-to-br from-cyber-dark via-void-black to-deep-space relative overflow-hidden">
+      {/* Futuristic Background Effects */}
+      <div className="absolute inset-0 cyber-grid opacity-15"></div>
+      <div className="absolute inset-0 bg-gradient-radial from-electric-blue/10 via-transparent to-neon-purple/10 animate-pulse"></div>
+      
       <Container>
-        <div className="text-center mb-16 animate-on-scroll stagger-1">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+        <div className="text-center mb-20 animate-on-scroll stagger-1">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 cyber-text-glow">
             What Founders Really Want — And How{" "}
-            <span className="bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-electric-blue via-neon-cyan to-holographic-purple bg-clip-text text-transparent animate-gradient cyber-text-pulse">
               Dreamwares Delivers It
             </span>
           </h2>
-          <p className="text-xl text-muted max-w-3xl mx-auto">
+          <div className="absolute inset-0 bg-gradient-to-r from-electric-blue/20 to-neon-cyan/20 blur-3xl animate-pulse -z-10"></div>
+          <p className="text-2xl text-cyber-silver max-w-4xl mx-auto cyber-text-subtle">
             See how we compare to traditional development approaches
           </p>
         </div>
 
         {/* Mind Map Container */}
-        <div className="animate-on-scroll stagger-2 relative min-h-[800px] md:min-h-[600px]">
+        <div className="animate-on-scroll stagger-2 relative min-h-[900px] md:min-h-[700px]">
           
           {/* Desktop Layout */}
           <div className="hidden md:block relative w-full h-full">
             <svg 
               viewBox="0 0 1200 600" 
               className="w-full h-full absolute inset-0"
-              style={{ minHeight: "600px" }}
+              style={{ minHeight: "700px" }}
             >
-              {/* Connection Lines */}
+              {/* Enhanced Connection Lines */}
               <defs>
                 <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#ef4444" stopOpacity="0.3" />
-                  <stop offset="100%" stopColor="#dc2626" stopOpacity="0.1" />
+                  <stop offset="0%" stopColor="#ef4444" stopOpacity="0.6" />
+                  <stop offset="100%" stopColor="#dc2626" stopOpacity="0.3" />
                 </linearGradient>
                 <linearGradient id="yellowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#eab308" stopOpacity="0.3" />
-                  <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.1" />
+                  <stop offset="0%" stopColor="#FFE066" stopOpacity="0.6" />
+                  <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.3" />
                 </linearGradient>
                 <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.3" />
-                  <stop offset="100%" stopColor="#10b981" stopOpacity="0.1" />
+                  <stop offset="0%" stopColor="#0EA5E9" stopOpacity="0.6" />
+                  <stop offset="100%" stopColor="#06B6D4" stopOpacity="0.3" />
                 </linearGradient>
               </defs>
 
-              {/* Main Branch Lines */}
-              {/* Left Branch (Traditional) */}
+              {/* Enhanced Main Branch Lines */}
               <path
                 d="M 600 300 Q 450 250 300 200"
                 stroke="url(#redGradient)"
-                strokeWidth="3"
+                strokeWidth="4"
                 fill="none"
                 className="animate-pulse"
                 style={{ animationDuration: "3s" }}
               />
               
-              {/* Middle Branch (Freelancers) */}
               <path
                 d="M 600 300 Q 600 150 600 100"
                 stroke="url(#yellowGradient)"
-                strokeWidth="3"
+                strokeWidth="4"
                 fill="none"
                 className="animate-pulse"
                 style={{ animationDuration: "3s", animationDelay: "0.5s" }}
               />
               
-              {/* Right Branch (Dreamwares) */}
               <path
                 d="M 600 300 Q 750 250 900 200"
                 stroke="url(#blueGradient)"
-                strokeWidth="3"
+                strokeWidth="4"
                 fill="none"
                 className="animate-pulse"
                 style={{ animationDuration: "3s", animationDelay: "1s" }}
@@ -212,9 +214,9 @@ return (
                         key={`${branch.id}-${nodeIndex}`}
                         d={`M ${startX} ${startY} Q ${(startX + endX) / 2} ${(startY + endY) / 2 - 20} ${endX} ${endY}`}
                         stroke={`url(#${branch.theme}Gradient)`}
-                        strokeWidth="2"
+                        strokeWidth="3"
                         fill="none"
-                        className="opacity-60"
+                        className="opacity-80"
                       />
                     );
                   })}
@@ -222,32 +224,33 @@ return (
               ))}
             </svg>
 
-            {/* Central Node */}
+            {/* Enhanced Central Node */}
             <div 
               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
               onMouseEnter={() => setHoveredNode('center')}
               onMouseLeave={() => setHoveredNode(null)}
             >
               <div className={`
-                bg-gradient-to-r from-gray-800 to-gray-900 
-                border border-gray-600 rounded-full 
-                w-32 h-32 md:w-40 md:h-40
+                bg-gradient-to-r from-void-black via-cyber-dark to-void-black 
+                border-2 border-electric-blue/50 rounded-full 
+                w-36 h-36 md:w-44 md:h-44
                 flex flex-col items-center justify-center
-                shadow-2xl transition-all duration-300
-                ${hoveredNode === 'center' ? 'scale-110 shadow-primary/30' : ''}
+                shadow-2xl transition-all duration-500 cyber-glow
+                ${hoveredNode === 'center' ? 'scale-110 shadow-electric-blue/50' : ''}
               `}>
-                <div className="text-center p-2">
-                  <div className="text-white font-bold text-sm md:text-base leading-tight">
+                <div className="text-center p-3">
+                  <div className="text-white font-black text-base md:text-lg leading-tight cyber-text-glow">
                     {mindMapData.center.title}
                   </div>
-                  <div className="text-gray-400 text-xs mt-1">
+                  <div className="text-cyber-silver text-sm mt-1 cyber-text-subtle">
                     {mindMapData.center.subtitle}
                   </div>
                 </div>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-electric-blue/10 to-neon-cyan/10 animate-pulse"></div>
               </div>
             </div>
 
-            {/* Branch Title Nodes */}
+            {/* Enhanced Branch Title Nodes */}
             {mindMapData.branches.map((branch, index) => {
               const colors = getThemeColors(branch.theme);
               let position;
@@ -270,29 +273,30 @@ return (
                 >
                   <div className={`
                     bg-gradient-to-r ${colors.secondary}
-                    border ${colors.border}
-                    rounded-xl px-6 py-4
-                    transition-all duration-300
-                    ${hoveredNode === branch.id ? `scale-105 shadow-xl ${colors.glow}` : ''}
+                    border-2 ${colors.border}
+                    rounded-2xl px-8 py-6
+                    transition-all duration-500 backdrop-blur-xl
+                    ${hoveredNode === branch.id ? `scale-110 shadow-2xl ${colors.glow}` : ''}
                   `}>
                     <div className="text-center">
-                      <div className={`font-bold text-white text-sm md:text-base ${
-                        branch.id === 'dreamwares' ? 'bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent' : ''
+                      <div className={`font-black text-white text-base md:text-lg ${
+                        branch.id === 'dreamwares' ? 'bg-gradient-to-r from-electric-blue to-neon-cyan bg-clip-text text-transparent cyber-text-pulse' : 'cyber-text-glow'
                       }`}>
                         {branch.title}
                       </div>
-                      <div className={`text-xs mt-1 ${
-                        branch.id === 'dreamwares' ? 'text-primary' : colors.text
+                      <div className={`text-sm mt-2 ${
+                        branch.id === 'dreamwares' ? 'text-electric-blue cyber-text-subtle' : colors.text
                       }`}>
                         {branch.subtitle}
                       </div>
                     </div>
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/5 to-transparent animate-pulse"></div>
                   </div>
                 </div>
               );
             })}
 
-            {/* Category Nodes */}
+            {/* Enhanced Category Nodes */}
             {mindMapData.branches.map((branch) => (
               <div key={`nodes-${branch.id}`}>
                 {branch.nodes.map((node, nodeIndex) => {
@@ -326,35 +330,36 @@ return (
                       onMouseLeave={() => setHoveredNode(null)}
                     >
                       <div className={`
-                        bg-gradient-to-r ${branch.id === 'dreamwares' ? 'from-primary/20 to-blue-500/20' : colors.secondary}
-                        border ${branch.id === 'dreamwares' ? 'border-primary/30' : colors.border}
-                        rounded-lg px-3 py-2 min-w-[180px]
-                        transition-all duration-300
+                        bg-gradient-to-r ${branch.id === 'dreamwares' ? 'from-electric-blue/20 to-neon-cyan/20' : colors.secondary}
+                        border-2 ${branch.id === 'dreamwares' ? 'border-electric-blue/40' : colors.border}
+                        rounded-xl px-4 py-3 min-w-[200px] backdrop-blur-xl
+                        transition-all duration-500
                         ${hoveredNode === `${branch.id}-${nodeIndex}` ? 
-                          `scale-105 shadow-lg ${branch.id === 'dreamwares' ? 'shadow-primary/20' : colors.glow}` : 
+                          `scale-110 shadow-2xl ${branch.id === 'dreamwares' ? 'shadow-electric-blue/30' : colors.glow}` : 
                           ''
                         }
                       `}>
-                        <div className="flex items-center space-x-2">
+                        <div className="flex items-center space-x-3">
                           <ApperIcon 
                             name={node.icon} 
-                            className={`w-4 h-4 ${
-                              branch.id === 'dreamwares' ? 'text-green-400' : colors.text
+                            className={`w-5 h-5 ${
+                              branch.id === 'dreamwares' ? 'text-neon-green drop-shadow-neon' : colors.text
                             }`} 
                           />
                           <div className="flex-1">
-                            <div className={`font-medium text-xs ${
-                              branch.id === 'dreamwares' ? 'text-white' : colors.text
+                            <div className={`font-bold text-sm ${
+                              branch.id === 'dreamwares' ? 'text-white cyber-text-glow' : colors.text
                             }`}>
                               {node.category}
                             </div>
-                            <div className={`text-xs mt-1 ${
-                              branch.id === 'dreamwares' ? 'text-gray-300' : 'text-gray-400'
+                            <div className={`text-sm mt-1 ${
+                              branch.id === 'dreamwares' ? 'text-cyber-silver cyber-text-subtle' : 'text-gray-400'
                             }`}>
                               {node.text}
                             </div>
                           </div>
                         </div>
+                        <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-transparent via-white/5 to-transparent animate-pulse"></div>
                       </div>
                     </div>
                   );
@@ -363,19 +368,20 @@ return (
             ))}
           </div>
 
-          {/* Mobile Layout */}
-          <div className="md:hidden space-y-8">
+          {/* Enhanced Mobile Layout */}
+          <div className="md:hidden space-y-10">
             {/* Central Node Mobile */}
-            <div className="flex justify-center mb-8">
-              <div className="bg-gradient-to-r from-gray-800 to-gray-900 border border-gray-600 rounded-full w-32 h-32 flex flex-col items-center justify-center shadow-xl">
-                <div className="text-center p-2">
-                  <div className="text-white font-bold text-sm leading-tight">
+            <div className="flex justify-center mb-12">
+              <div className="bg-gradient-to-r from-void-black via-cyber-dark to-void-black border-2 border-electric-blue/50 rounded-full w-36 h-36 flex flex-col items-center justify-center shadow-2xl cyber-glow">
+                <div className="text-center p-3">
+                  <div className="text-white font-black text-base leading-tight cyber-text-glow">
                     {mindMapData.center.title}
                   </div>
-                  <div className="text-gray-400 text-xs mt-1">
+                  <div className="text-cyber-silver text-sm mt-1 cyber-text-subtle">
                     {mindMapData.center.subtitle}
                   </div>
                 </div>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-electric-blue/10 to-neon-cyan/10 animate-pulse"></div>
               </div>
             </div>
 
@@ -384,21 +390,21 @@ return (
               const colors = getThemeColors(branch.theme);
               
               return (
-                <div key={`mobile-${branch.id}`} className="space-y-4">
+                <div key={`mobile-${branch.id}`} className="space-y-6">
                   {/* Branch Title */}
                   <div className="text-center">
                     <div className={`
                       inline-block bg-gradient-to-r ${colors.secondary}
-                      border ${colors.border}
-                      rounded-xl px-6 py-3
+                      border-2 ${colors.border}
+                      rounded-2xl px-8 py-4 backdrop-blur-xl
                     `}>
-                      <div className={`font-bold text-white ${
-                        branch.id === 'dreamwares' ? 'bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent' : ''
+                      <div className={`font-black text-white text-lg ${
+                        branch.id === 'dreamwares' ? 'bg-gradient-to-r from-electric-blue to-neon-cyan bg-clip-text text-transparent cyber-text-pulse' : 'cyber-text-glow'
                       }`}>
                         {branch.title}
                       </div>
-                      <div className={`text-xs mt-1 ${
-                        branch.id === 'dreamwares' ? 'text-primary' : colors.text
+                      <div className={`text-sm mt-2 ${
+                        branch.id === 'dreamwares' ? 'text-electric-blue cyber-text-subtle' : colors.text
                       }`}>
                         {branch.subtitle}
                       </div>
@@ -406,37 +412,38 @@ return (
                   </div>
 
                   {/* Branch Nodes */}
-                  <div className="grid grid-cols-1 gap-3 px-4">
+                  <div className="grid grid-cols-1 gap-4 px-6">
                     {branch.nodes.map((node, nodeIndex) => (
                       <div 
                         key={`mobile-${branch.id}-${nodeIndex}`}
                         className={`
-                          bg-gradient-to-r ${branch.id === 'dreamwares' ? 'from-primary/20 to-blue-500/20' : colors.secondary}
-                          border ${branch.id === 'dreamwares' ? 'border-primary/30' : colors.border}
-                          rounded-lg p-3
-                          transition-all duration-300 hover:scale-102
+                          bg-gradient-to-r ${branch.id === 'dreamwares' ? 'from-electric-blue/20 to-neon-cyan/20' : colors.secondary}
+                          border-2 ${branch.id === 'dreamwares' ? 'border-electric-blue/40' : colors.border}
+                          rounded-xl p-4 backdrop-blur-xl
+                          transition-all duration-500 hover:scale-105
                         `}
                       >
-                        <div className="flex items-center space-x-3">
+                        <div className="flex items-center space-x-4">
                           <ApperIcon 
                             name={node.icon} 
-                            className={`w-5 h-5 ${
-                              branch.id === 'dreamwares' ? 'text-green-400' : colors.text
+                            className={`w-6 h-6 ${
+                              branch.id === 'dreamwares' ? 'text-neon-green drop-shadow-neon' : colors.text
                             }`} 
                           />
                           <div className="flex-1">
-                            <div className={`font-medium text-sm ${
-                              branch.id === 'dreamwares' ? 'text-white' : colors.text
+                            <div className={`font-bold text-base ${
+                              branch.id === 'dreamwares' ? 'text-white cyber-text-glow' : colors.text
                             }`}>
                               {node.category}
                             </div>
-                            <div className={`text-sm mt-1 ${
-                              branch.id === 'dreamwares' ? 'text-gray-300' : 'text-gray-400'
+                            <div className={`text-base mt-2 ${
+                              branch.id === 'dreamwares' ? 'text-cyber-silver cyber-text-subtle' : 'text-gray-400'
                             }`}>
                               {node.text}
                             </div>
                           </div>
                         </div>
+                        <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-transparent via-white/5 to-transparent animate-pulse"></div>
                       </div>
                     ))}
                   </div>
@@ -444,7 +451,7 @@ return (
               );
             })}
           </div>
-</div>
+        </div>
       </Container>
     </section>
   );
