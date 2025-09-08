@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Container from "@/components/atoms/Container";
 
 const ProcessSection = () => {
@@ -19,10 +19,7 @@ const ProcessSection = () => {
     return () => observer.disconnect();
   }, []);
 
-const [currentPhase, setCurrentPhase] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-
-  const processSteps = [
+const processStepsPhase1 = [
     {
       number: 1,
       title: "Initial Call",
@@ -55,9 +52,52 @@ const [currentPhase, setCurrentPhase] = useState(0);
     }
   ];
 
-  const phases = [
-    { segments: 6, steps: processSteps, name: "Complete Process" }
+  const processStepsPhase2 = [
+    {
+      number: 1,
+      title: "Consultation & Discovery",
+      description: "Comprehensive understanding of goals, requirements, and timeline"
+    },
+    {
+      number: 2,
+      title: "Free POC",
+      description: "Validate your idea with a proof of concept before you commit"
+    },
+    {
+      number: 3,
+      title: "Design & Architecture",
+      description: "Create the foundation and system architecture"
+    },
+    {
+      number: 4,
+      title: "AI Development",
+      description: "Rapid building using advanced AI development tools"
+    },
+    {
+      number: 5,
+      title: "Launch & Scale",
+      description: "Go live with real users and scale your product"
+    }
   ];
+
+const phases = [
+    { segments: 6, steps: processStepsPhase1, name: "Phase 1: Complete Process", rotation: 0 },
+    { segments: 5, steps: processStepsPhase2, name: "Phase 2: Streamlined Process", rotation: 45 }
+  ];
+const [currentPhase, setCurrentPhase] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  useEffect(() => {
+    const phaseTimer = setTimeout(() => {
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentPhase(1);
+        setIsTransitioning(false);
+      }, 500);
+    }, 8000); // Switch to Phase 2 after 8 seconds
+
+    return () => clearTimeout(phaseTimer);
+  }, []);
 
   useEffect(() => {
     if (isPaused) return;
@@ -69,10 +109,11 @@ const [currentPhase, setCurrentPhase] = useState(0);
     return () => clearInterval(interval);
   }, [isPaused, phases.length]);
 
-  const createSegmentPath = (index, total, radius = 120, centerX = 150, centerY = 150) => {
+const createSegmentPath = (index, total, radius = 120, centerX = 150, centerY = 150, rotationOffset = 0) => {
     const angle = (2 * Math.PI) / total;
-    const startAngle = (index * angle) - Math.PI / 2;
-    const endAngle = ((index + 1) * angle) - Math.PI / 2;
+    const rotationRad = (rotationOffset * Math.PI) / 180;
+    const startAngle = (index * angle) - Math.PI / 2 + rotationRad;
+    const endAngle = ((index + 1) * angle) - Math.PI / 2 + rotationRad;
     
     const x1 = centerX + radius * Math.cos(startAngle);
     const y1 = centerY + radius * Math.sin(startAngle);
@@ -84,8 +125,9 @@ const [currentPhase, setCurrentPhase] = useState(0);
     return `M ${centerX} ${centerY} L ${x1} ${y1} A ${radius} ${radius} 0 ${largeArc} 1 ${x2} ${y2} Z`;
   };
 
-  const getLabelPosition = (index, total, radius = 160, centerX = 150, centerY = 150) => {
-    const angle = (2 * Math.PI * index) / total - Math.PI / 2;
+const getLabelPosition = (index, total, radius = 160, centerX = 150, centerY = 150, rotationOffset = 0) => {
+    const rotationRad = (rotationOffset * Math.PI) / 180;
+    const angle = (2 * Math.PI * index) / total - Math.PI / 2 + rotationRad;
     const x = centerX + radius * Math.cos(angle);
     const y = centerY + radius * Math.sin(angle);
     return { x, y };
@@ -123,7 +165,11 @@ const [currentPhase, setCurrentPhase] = useState(0);
               width="400" 
               height="400" 
               viewBox="0 0 300 300" 
-              className={`circular-process ${isPaused ? 'paused' : ''}`}
+className={`circular-process ${isPaused ? 'paused' : ''} ${isTransitioning ? 'morphing' : ''}`}
+              style={{
+                transform: `rotate(${phases[currentPhase].rotation}deg)`,
+                transition: isTransitioning ? 'transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'none'
+              }}
             >
               {/* Rotating segments */}
               <g className="segments-container">
