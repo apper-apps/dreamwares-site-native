@@ -103,32 +103,63 @@ const processStepsPhase2 = [
     }
   ];
 
+  const processStepsPhase4 = [
+    {
+      number: 1,
+      title: "Initial Consultation",
+      description: "Comprehensive discovery of your business goals and technical requirements"
+    },
+    {
+      number: 2,
+      title: "Free POC Development",
+      description: "Risk-free proof of concept to validate your idea before commitment"
+    },
+    {
+      number: 3,
+      title: "Strategic Planning",
+      description: "Detailed roadmap with architecture design and timeline planning"
+    },
+    {
+      number: 4,
+      title: "AI-Powered Development",
+      description: "Rapid development using cutting-edge AI tools and methodologies"
+    },
+    {
+      number: 5,
+      title: "Quality Assurance",
+      description: "Comprehensive testing and optimization for performance excellence"
+    },
+    {
+      number: 6,
+      title: "Launch & Deployment",
+      description: "Seamless go-live process with real users and scalability setup"
+    },
+    {
+      number: 7,
+      title: "Ongoing Support & Optimization",
+      description: "Continuous monitoring, updates, and performance enhancements"
+    }
+  ];
+
 const phases = [
     { segments: 6, steps: processStepsPhase1, name: "Phase 1: Complete Process", rotation: 0 },
     { segments: 5, steps: processStepsPhase2, name: "Phase 2: Streamlined Process", rotation: 45 },
-    { segments: 4, steps: processStepsPhase3, name: "Phase 3: Major Phases", rotation: 90 }
+    { segments: 4, steps: processStepsPhase3, name: "Phase 3: Major Phases", rotation: 90 },
+    { segments: 7, steps: processStepsPhase4, name: "Phase 4: Full Detailed Process", rotation: 135 }
   ];
 const [currentPhase, setCurrentPhase] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
 useEffect(() => {
-    const phaseTimer = setTimeout(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
       setIsTransitioning(true);
       setTimeout(() => {
         setCurrentPhase((prev) => (prev + 1) % phases.length);
         setIsTransitioning(false);
       }, 500);
-    }, 8000); // Switch phases every 8 seconds
-
-    return () => clearTimeout(phaseTimer);
-  }, []);
-
-  useEffect(() => {
-    if (isPaused) return;
-
-    const interval = setInterval(() => {
-      setCurrentPhase((prev) => (prev + 1) % phases.length);
-    }, 3000);
+    }, 4000); // Switch phases every 4 seconds with transition
 
     return () => clearInterval(interval);
   }, [isPaused, phases.length]);
@@ -190,9 +221,9 @@ const getLabelPosition = (index, total, radius = 160, centerX = 150, centerY = 1
               height="400" 
               viewBox="0 0 300 300" 
 className={`circular-process ${isPaused ? 'paused' : ''} ${isTransitioning ? 'morphing' : ''}`}
-              style={{
+style={{
                 transform: `rotate(${phases[currentPhase].rotation}deg)`,
-                transition: isTransitioning ? 'transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'none'
+                transition: isTransitioning ? 'transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'transform 0.3s ease-out'
               }}
             >
               {/* Rotating segments */}
