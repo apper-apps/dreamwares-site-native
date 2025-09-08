@@ -33,7 +33,7 @@ const resourcesLinks = [
   ];
 
   return (
-    <footer className="relative py-16 px-10 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
+<footer className="relative py-16 px-10 bg-gradient-to-br from-background via-surface to-background text-white overflow-hidden">
       {/* Background Watermark */}
 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <span className="text-[12rem] md:text-[20rem] font-bold text-white/10 select-none whitespace-nowrap">
@@ -42,7 +42,7 @@ const resourcesLinks = [
       </div>
       
       {/* Gradient Mesh Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 pointer-events-none"></div>
+<div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-blue-500/10 pointer-events-none"></div>
       
       <Container>
         <div className="relative z-10">
@@ -57,8 +57,8 @@ const resourcesLinks = [
                   {informationLinks.map((link) => (
                     <li key={link.label}>
                       <a 
-                        href={link.href}
-                        className="text-gray-300 hover:text-primary transition-colors duration-200 text-sm"
+href={link.href}
+                        className="text-muted hover:text-primary transition-colors duration-200 text-sm"
                       >
                         {link.label}
                       </a>
@@ -74,8 +74,8 @@ const resourcesLinks = [
                   {servicesLinks.map((link) => (
                     <li key={link.label}>
                       <a 
-                        href={link.href}
-                        className="text-gray-300 hover:text-primary transition-colors duration-200 text-sm"
+href={link.href}
+                        className="text-muted hover:text-primary transition-colors duration-200 text-sm"
                       >
                         {link.label}
                       </a>
@@ -91,8 +91,8 @@ const resourcesLinks = [
                   {resourcesLinks.map((link) => (
                     <li key={link.label}>
                       <a 
-                        href={link.href}
-                        className="text-gray-300 hover:text-primary transition-colors duration-200 text-sm"
+href={link.href}
+                        className="text-muted hover:text-primary transition-colors duration-200 text-sm"
                       >
                         {link.label}
                       </a>
@@ -113,7 +113,7 @@ const resourcesLinks = [
                   placeholder="Enter your work email"
                   className="w-full px-4 py-3 bg-slate-800/80 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors duration-200"
                 />
-                <button className="w-full px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:scale-105">
+<button className="w-full px-6 py-3 bg-gradient-to-r from-primary to-blue-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:scale-105">
                   Subscribe
                 </button>
               </div>
@@ -143,10 +143,10 @@ const resourcesLinks = [
                   © {currentYear} Dreamwares AI. All rights reserved.
                 </p>
                 <div className="flex space-x-6 text-sm">
-                  <a href="#" className="text-gray-300 hover:text-primary transition-colors duration-200">
+<a href="#" className="text-muted hover:text-primary transition-colors duration-200">
                     Privacy Policy
                   </a>
-                  <a href="#" className="text-gray-300 hover:text-primary transition-colors duration-200">
+                  <a href="#" className="text-muted hover:text-primary transition-colors duration-200">
                     Terms of Service
                   </a>
                 </div>

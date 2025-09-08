@@ -33,7 +33,7 @@ const handleCTAClick = () => {
   ];
 
   return (
-<section id="contact" ref={sectionRef} className="py-20 bg-gradient-to-r from-primary to-secondary relative overflow-hidden">
+<section id="contact" ref={sectionRef} className="py-20 bg-gradient-to-r from-primary to-blue-500 relative overflow-hidden">
       <Container>
         <div className="text-center text-white animate-on-scroll stagger-1">
 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">

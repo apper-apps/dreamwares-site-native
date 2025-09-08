@@ -34,19 +34,19 @@ const handleContactClick = () => {
   ];
 
   return (
-<section ref={sectionRef} className="pt-32 pb-20 bg-gradient-to-br from-background via-surface/50 to-primary/10 relative overflow-hidden">
+<section ref={sectionRef} className="pt-32 pb-20 bg-gradient-to-br from-background via-surface/50 to-background relative overflow-hidden">
       <Container>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="animate-on-scroll stagger-1">
 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              We build your tech,{" "}
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+We build your tech,{" "}
+              <span className="bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent">
                 you build your business
               </span>
             </h1>
             
-<p className="text-xl text-gray-300 leading-relaxed">
+<p className="text-xl text-muted leading-relaxed">
               With AI-powered development, Dreamwares helps non-technical founders launch in weeks, not months.
             </p>
 
@@ -67,7 +67,7 @@ const handleContactClick = () => {
               <ApperIcon name="ArrowRight" className="w-5 h-5 ml-2" />
             </Button>
             
-<p className="text-sm text-gray-400">
+<p className="text-sm text-muted">
               Free consultation • No commitment required
             </p>
           </div>
@@ -95,10 +95,10 @@ const handleContactClick = () => {
               </div>
               
               {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center shadow-lg">
-                <ApperIcon name="Code" className="w-10 h-10 text-white" />
+<div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-r from-primary to-blue-500 rounded-full flex items-center justify-center shadow-lg">
+                <ApperIcon name="TrendingUp" className="w-10 h-10 text-white" />
               </div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r from-secondary to-primary rounded-full flex items-center justify-center shadow-lg">
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r from-blue-500 to-primary rounded-full flex items-center justify-center shadow-lg">
                 <ApperIcon name="Smartphone" className="w-8 h-8 text-white" />
               </div>
             </div>

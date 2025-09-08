@@ -100,10 +100,10 @@ const MetricsSection = () => {
   }, [isVisible]);
 
   return (
-    <section ref={sectionRef} className="py-20 bg-gradient-to-br from-surface/50 to-background">
+<section ref={sectionRef} className="py-20 bg-gradient-to-br from-surface/50 to-background">
       <Container>
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-4">
+<h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent mb-4">
             Our Impact in Numbers
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
@@ -119,7 +119,7 @@ const MetricsSection = () => {
                 isVisible ? `animate-on-scroll animate stagger-${index + 1}` : 'animate-on-scroll'
               }`}
             >
-              <div className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
+<div className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent mb-2">
                 {counters[metric.key]}{metric.suffix}
               </div>
               <div className="text-gray-300 font-medium text-sm md:text-base">
@@ -130,9 +130,9 @@ const MetricsSection = () => {
         </div>
 
         {/* Additional decorative elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+<div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/3 right-1/4 w-48 h-48 bg-secondary/5 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/3 right-1/4 w-48 h-48 bg-blue-500/5 rounded-full blur-3xl"></div>
         </div>
       </Container>
     </section>

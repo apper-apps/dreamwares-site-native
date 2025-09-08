@@ -85,13 +85,13 @@ const ContactModal = ({ isOpen, onClose }) => {
       />
       
       {/* Modal */}
-      <div className="relative w-full max-w-md bg-surface border border-primary/20 rounded-xl shadow-2xl">
+<div className="relative w-full max-w-md bg-surface border border-gray-600 rounded-xl shadow-2xl">
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-primary/10">
+        <div className="flex items-center justify-between p-6 border-b border-gray-700">
           <h2 className="text-xl font-semibold text-white">Let's Discuss Your Project</h2>
           <button
             onClick={handleClose}
-            className="p-2 text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-primary/10"
+            className="p-2 text-muted hover:text-white transition-colors rounded-lg hover:bg-primary/10"
           >
             <ApperIcon name="X" size={20} />
           </button>
@@ -101,7 +101,7 @@ const ContactModal = ({ isOpen, onClose }) => {
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
           {/* Name Field */}
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+<label htmlFor="name" className="block text-sm font-medium text-muted mb-2">
               Full Name *
             </label>
             <input
@@ -109,18 +109,18 @@ const ContactModal = ({ isOpen, onClose }) => {
               id="name"
               name="name"
               value={formData.name}
-              onChange={handleChange}
-              className={`w-full px-4 py-3 bg-background border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary transition-colors ${
+onChange={handleChange}
+              className={`w-full px-4 py-3 bg-background border rounded-lg text-white placeholder-muted focus:outline-none focus:ring-2 focus:ring-primary transition-colors ${
                 errors.name ? 'border-red-500' : 'border-gray-600 hover:border-primary/50 focus:border-primary'
               }`}
-              placeholder="Enter your full name"
+              placeholder="Your full name"
             />
             {errors.name && <p className="mt-1 text-sm text-red-400">{errors.name}</p>}
           </div>
 
           {/* Email Field */}
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+<label htmlFor="email" className="block text-sm font-medium text-muted mb-2">
               Email Address *
             </label>
             <input
@@ -128,11 +128,11 @@ const ContactModal = ({ isOpen, onClose }) => {
               id="email"
               name="email"
               value={formData.email}
-              onChange={handleChange}
-              className={`w-full px-4 py-3 bg-background border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary transition-colors ${
+onChange={handleChange}
+              className={`w-full px-4 py-3 bg-background border rounded-lg text-white placeholder-muted focus:outline-none focus:ring-2 focus:ring-primary transition-colors ${
                 errors.email ? 'border-red-500' : 'border-gray-600 hover:border-primary/50 focus:border-primary'
               }`}
-              placeholder="your.email@company.com"
+              placeholder="your@email.com"
             />
             {errors.email && <p className="mt-1 text-sm text-red-400">{errors.email}</p>}
           </div>
@@ -145,10 +145,10 @@ const ContactModal = ({ isOpen, onClose }) => {
             <input
               type="text"
               id="company"
-              name="company"
+name="company"
               value={formData.company}
               onChange={handleChange}
-              className={`w-full px-4 py-3 bg-background border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary transition-colors ${
+              className={`w-full px-4 py-3 bg-background border rounded-lg text-white placeholder-muted focus:outline-none focus:ring-2 focus:ring-primary transition-colors ${
                 errors.company ? 'border-red-500' : 'border-gray-600 hover:border-primary/50 focus:border-primary'
               }`}
               placeholder="Your company name"
@@ -164,10 +164,10 @@ const ContactModal = ({ isOpen, onClose }) => {
             <textarea
               id="projectDetails"
               name="projectDetails"
-              rows={4}
+rows={4}
               value={formData.projectDetails}
               onChange={handleChange}
-              className={`w-full px-4 py-3 bg-background border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary transition-colors resize-none ${
+              className={`w-full px-4 py-3 bg-background border rounded-lg text-white placeholder-muted focus:outline-none focus:ring-2 focus:ring-primary transition-colors resize-none ${
                 errors.projectDetails ? 'border-red-500' : 'border-gray-600 hover:border-primary/50 focus:border-primary'
               }`}
               placeholder="Tell us about your project requirements, timeline, and goals..."

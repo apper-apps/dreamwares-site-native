@@ -71,11 +71,11 @@ const BlogSection = () => {
         <div className="text-center mb-16 animate-on-scroll stagger-1">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Latest{" "}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+<span className="bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent">
               Insights
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-muted max-w-3xl mx-auto mb-8">
             Discover our latest thoughts on product development, industry trends, and technical insights
           </p>
         </div>
@@ -94,8 +94,8 @@ const BlogSection = () => {
           </div>
         ) : (
           <div className="text-center py-12">
-            <ApperIcon name="FileText" className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-            <p className="text-gray-400 text-lg">No blog posts available at the moment.</p>
+<ApperIcon name="FileText" className="w-16 h-16 text-muted mx-auto mb-4" />
+            <p className="text-muted text-lg">No blog posts available at the moment.</p>
           </div>
         )}
 

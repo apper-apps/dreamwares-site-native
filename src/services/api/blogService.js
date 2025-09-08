@@ -67,7 +67,7 @@ class BlogService {
       content: postData.content,
       category: postData.category,
       categoryIcon: postData.categoryIcon || 'FileText',
-      categoryColor: postData.categoryColor || 'from-primary to-secondary',
+categoryColor: postData.categoryColor || 'from-primary to-blue-500',
       author: postData.author,
       publishedAt: new Date().toISOString(),
       readTime: postData.readTime || 5,

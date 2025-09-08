@@ -33,7 +33,7 @@ const ProductsSection = () => {
         "Smart automation suggestions"
       ],
       icon: "Zap",
-      gradient: "from-blue-500 to-purple-600"
+gradient: "from-blue-500 to-blue-600"
     },
     {
       name: "Apper.io",
@@ -45,7 +45,7 @@ const ProductsSection = () => {
         "Enterprise ready"
       ],
       icon: "Smartphone",
-      gradient: "from-purple-500 to-pink-600"
+      gradient: "from-secondary to-blue-600"
     },
     {
       name: "AutoTester.ai",
@@ -57,7 +57,7 @@ const ProductsSection = () => {
         "Comprehensive test coverage"
       ],
       icon: "TestTube",
-      gradient: "from-green-500 to-teal-600"
+      gradient: "from-accent to-green-600"
     }
   ];
 
@@ -67,7 +67,7 @@ const ProductsSection = () => {
         <div className="text-center mb-16 animate-on-scroll stagger-1">
 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Our{" "}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+<span className="bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent">
               Success Stories
             </span>
           </h2>
@@ -86,7 +86,7 @@ const ProductsSection = () => {
             >
               {/* Product Info */}
               <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-<Card className="h-full bg-background border-primary/20">
+<Card className="h-full bg-background border-gray-700">
                   <div className="flex items-center mb-6">
                     <div className={`w-12 h-12 bg-gradient-to-r ${product.gradient} rounded-xl flex items-center justify-center mr-4 shadow-lg`}>
                       <ApperIcon name={product.icon} className="w-6 h-6 text-white" />

@@ -63,12 +63,12 @@ const ProcessSection = () => {
       <Container>
         <div className="text-center mb-16 animate-on-scroll stagger-1">
 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            From Idea to Launch in{" "}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+From Idea to Launch in{" "}
+            <span className="bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent">
               Simple Steps
             </span>
           </h2>
-<p className="text-xl text-gray-300 max-w-3xl mx-auto">
+<p className="text-xl text-muted max-w-3xl mx-auto">
             Our proven process takes you from concept to working product with clarity and speed
           </p>
         </div>

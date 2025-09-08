@@ -65,12 +65,12 @@ const ComparisonSection = () => {
       <Container>
         <div className="text-center mb-16 animate-on-scroll stagger-1">
 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            What Founders Really Want — And How{" "}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+What Founders Really Want — And How{" "}
+            <span className="bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent">
               Dreamwares Delivers It
             </span>
           </h2>
-<p className="text-xl text-gray-300 max-w-3xl mx-auto">
+<p className="text-xl text-muted max-w-3xl mx-auto">
             See how we compare to traditional development approaches
           </p>
         </div>
@@ -78,18 +78,18 @@ const ComparisonSection = () => {
         <div className="animate-on-scroll stagger-2">
           <Card className="overflow-hidden">
             {/* Header */}
-<div className="grid grid-cols-1 md:grid-cols-4 gap-4 border-b border-primary/20 pb-6 mb-6">
+<div className="grid grid-cols-1 md:grid-cols-4 gap-4 border-b border-gray-700 pb-6 mb-6">
 <div className="font-semibold text-white text-center md:text-left">Category</div>
               <div className="text-center">
                 <div className="font-semibold text-white mb-1">Traditional Development</div>
-                <div className="text-sm text-gray-400">Slow & Expensive</div>
+                <div className="text-sm text-muted">Slow & Expensive</div>
               </div>
               <div className="text-center">
-                <div className="font-semibold text-white mb-1">Freelancers/Agencies</div>
-                <div className="text-sm text-gray-400">Inconsistent</div>
+<div className="font-semibold text-white mb-1">Freelancers/Agencies</div>
+                <div className="text-sm text-muted">Hit or Miss</div>
               </div>
               <div className="text-center">
-                <div className="font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-1">
+                <div className="font-semibold bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent mb-1">
                   Dreamwares AI
                 </div>
                 <div className="text-sm text-primary font-medium">The Better Way</div>
@@ -114,7 +114,7 @@ const ComparisonSection = () => {
                     <span className="text-gray-400">{row.freelancers.text}</span>
                   </div>
                   
-                  <div className="flex items-center justify-center md:justify-center space-x-2 text-center bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg py-2 px-3 border border-primary/20">
+<div className="flex items-center justify-center md:justify-center space-x-2 text-center bg-gradient-to-r from-primary/20 to-blue-500/20 rounded-lg py-2 px-3 border border-gray-700">
                     <ApperIcon name={row.dreamwares.icon} className={`w-5 h-5 ${row.dreamwares.color}`} />
                     <span className="font-medium text-white">{row.dreamwares.text}</span>
                   </div>
