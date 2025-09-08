@@ -1,12 +1,12 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { toast } from "react-toastify";
+import ContactModal from "@/components/organisms/ContactModal";
+import ApperIcon from "@/components/ApperIcon";
 import Container from "@/components/atoms/Container";
 import Button from "@/components/atoms/Button";
-import ApperIcon from "@/components/ApperIcon";
-import { toast } from "react-toastify";
-
 const CTASection = () => {
-  const sectionRef = useRef();
-
+const sectionRef = useRef();
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -22,8 +22,8 @@ const CTASection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleCTAClick = () => {
-    toast.success("Thanks for your interest! We'll be in touch soon.");
+const handleCTAClick = () => {
+    setIsContactModalOpen(true);
   };
 
   const trustPoints = [
@@ -67,8 +67,12 @@ const CTASection = () => {
           <p className="text-sm opacity-75 mt-6 animate-on-scroll stagger-4">
             Free consultation • No commitment required • Response within 24 hours
           </p>
-        </div>
+</div>
       </Container>
+      <ContactModal 
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+      />
     </section>
   );
 };

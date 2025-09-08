@@ -4,10 +4,12 @@ import Button from "@/components/atoms/Button";
 import NavItem from "@/components/molecules/NavItem";
 import ApperIcon from "@/components/ApperIcon";
 import { cn } from "@/utils/cn";
+import ContactModal from "@/components/organisms/ContactModal";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,11 +27,9 @@ const Header = () => {
     { label: "Testimonials", href: "#testimonials" }
   ];
 
-  const scrollToContact = () => {
-    const element = document.querySelector("#contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+const handleContactClick = () => {
+    setIsContactModalOpen(true);
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -60,7 +60,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button onClick={scrollToContact} size="sm">
+<Button onClick={handleContactClick} size="sm">
               Start With a Chat
             </Button>
           </div>
@@ -93,11 +93,8 @@ const Header = () => {
                   {item.label}
                 </NavItem>
               ))}
-              <Button 
-                onClick={() => {
-                  scrollToContact();
-                  setIsMobileMenuOpen(false);
-                }}
+<Button 
+                onClick={handleContactClick}
                 className="w-full mt-4"
               >
                 Start With a Chat
@@ -105,7 +102,12 @@ const Header = () => {
             </div>
           </Container>
         </div>
-      )}
+)}
+      
+      <ContactModal 
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+      />
     </header>
   );
 };

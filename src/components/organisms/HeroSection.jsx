@@ -1,9 +1,11 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import ContactModal from "@/components/organisms/ContactModal";
+import ApperIcon from "@/components/ApperIcon";
 import Container from "@/components/atoms/Container";
 import Button from "@/components/atoms/Button";
-import ApperIcon from "@/components/ApperIcon";
 
 const HeroSection = () => {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const sectionRef = useRef();
 
   useEffect(() => {
@@ -21,11 +23,8 @@ const HeroSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const scrollToContact = () => {
-    const element = document.querySelector("#contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+const handleContactClick = () => {
+    setIsContactModalOpen(true);
   };
 
   const valuePops = [
@@ -63,7 +62,7 @@ const HeroSection = () => {
               ))}
             </div>
 
-            <Button onClick={scrollToContact} size="lg" className="mb-4">
+<Button onClick={handleContactClick} size="lg" className="mb-4">
               Let's Discuss Your Needs Now
               <ApperIcon name="ArrowRight" className="w-5 h-5 ml-2" />
             </Button>
@@ -87,17 +86,16 @@ const HeroSection = () => {
                     <div className="text-sm opacity-90">You Own It</div>
                   </div>
                 </div>
-                <div className="flex items-center justify-between text-sm opacity-90">
+<div className="flex items-center justify-between text-sm opacity-90">
                   <span>AI-Powered</span>
                   <ApperIcon name="Sparkles" className="w-5 h-5" />
                   <span>Fast Delivery</span>
                   <ApperIcon name="Zap" className="w-5 h-5" />
-                  <span>Full Support</span>
                 </div>
               </div>
               
               {/* Floating Elements */}
-<div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center shadow-lg">
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center shadow-lg">
                 <ApperIcon name="Code" className="w-10 h-10 text-white" />
               </div>
               <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r from-secondary to-primary rounded-full flex items-center justify-center shadow-lg">
@@ -107,6 +105,11 @@ const HeroSection = () => {
           </div>
         </div>
       </Container>
+      
+      <ContactModal 
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+      />
     </section>
   );
 };
