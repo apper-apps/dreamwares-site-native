@@ -1,0 +1,26 @@
+[
+  {
+    "Id": 1,
+    "label": "Process",
+    "href": "#process",
+    "isActive": false
+  },
+  {
+    "Id": 2,
+    "label": "Industries", 
+    "href": "#industries",
+    "isActive": false
+  },
+  {
+    "Id": 3,
+    "label": "Products",
+    "href": "#products", 
+    "isActive": false
+  },
+  {
+    "Id": 4,
+    "label": "Testimonials",
+    "href": "#testimonials",
+    "isActive": false
+  }
+]
