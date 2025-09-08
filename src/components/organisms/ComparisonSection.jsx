@@ -444,9 +444,8 @@ return (
               );
             })}
           </div>
-        </div>
+</div>
       </Container>
-</Container>
     </section>
   );
 };
