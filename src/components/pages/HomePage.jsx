@@ -1,5 +1,6 @@
 import Header from "@/components/organisms/Header";
 import HeroSection from "@/components/organisms/HeroSection";
+import MetricsSection from "@/components/organisms/MetricsSection";
 import ComparisonSection from "@/components/organisms/ComparisonSection";
 import ProcessSection from "@/components/organisms/ProcessSection";
 import IndustriesSection from "@/components/organisms/IndustriesSection";
@@ -13,7 +14,8 @@ const HomePage = () => {
     <div className="min-h-screen">
       <Header />
       <main>
-        <HeroSection />
+<HeroSection />
+        <MetricsSection />
         <ComparisonSection />
         <ProcessSection />
         <IndustriesSection />
