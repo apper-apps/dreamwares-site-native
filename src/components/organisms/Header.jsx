@@ -20,10 +20,11 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = [
+const navItems = [
     { label: "Process", href: "#process" },
     { label: "Industries", href: "#industries" },
     { label: "Products", href: "#products" },
+    { label: "Blog", href: "/blog" },
     { label: "Testimonials", href: "#testimonials" }
   ];
 

@@ -19,6 +19,12 @@
   },
   {
     "Id": 4,
+    "label": "Blog",
+    "href": "/blog",
+    "isActive": false
+  },
+  {
+    "Id": 5,
     "label": "Testimonials",
     "href": "#testimonials",
     "isActive": false

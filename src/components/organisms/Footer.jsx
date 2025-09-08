@@ -18,8 +18,8 @@ const Footer = () => {
     { label: "Testing", href: "#" }
   ];
 
-  const resourcesLinks = [
-    { label: "Blog", href: "#" },
+const resourcesLinks = [
+    { label: "Blog", href: "/blog" },
     { label: "Case Studies", href: "#" },
     { label: "Documentation", href: "#" },
     { label: "Support", href: "#" }
