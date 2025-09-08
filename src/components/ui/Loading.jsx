@@ -9,7 +9,7 @@ className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full m
           animate={{ rotate: 360 }}
           transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
         />
-        <p className="text-muted font-medium">Loading...</p>
+        <p className="text-gray-300 font-medium">Loading...</p>
 </div>
     </div>
   );

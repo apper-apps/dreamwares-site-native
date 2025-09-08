@@ -46,7 +46,7 @@ We build your tech,{" "}
               </span>
             </h1>
             
-<p className="text-xl text-muted leading-relaxed">
+<p className="text-xl text-muted leading-relaxed mb-8">
               With AI-powered development, Dreamwares helps non-technical founders launch in weeks, not months.
             </p>
 
@@ -106,7 +106,7 @@ We build your tech,{" "}
         </div>
       </Container>
       
-      <ContactModal 
+<ContactModal 
         isOpen={isContactModalOpen}
         onClose={() => setIsContactModalOpen(false)}
       />

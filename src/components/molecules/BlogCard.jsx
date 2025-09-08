@@ -1,8 +1,7 @@
-import Card from '@/components/atoms/Card';
-import Button from '@/components/atoms/Button';
-import ApperIcon from '@/components/ApperIcon';
-import { formatDistanceToNow } from 'date-fns';
-
+import Card from "@/components/atoms/Card";
+import Button from "@/components/atoms/Button";
+import ApperIcon from "@/components/ApperIcon";
+import { formatDistanceToNow } from "date-fns";
 const BlogCard = ({ post, className = "" }) => {
   const handleReadMore = () => {
     // In a real implementation, this would navigate to the full post

@@ -4,7 +4,7 @@ const TestimonialCard = ({ quote, highlight, author, role }) => {
   return (
     <Card hover className="h-full">
       <div className="flex flex-col h-full">
-        <blockquote className="text-gray-700 text-lg leading-relaxed flex-1 mb-6">
+<blockquote className="text-gray-300 text-lg leading-relaxed flex-1 mb-6">
           "{quote}"
           {highlight && (
             <span className="block mt-3 text-primary font-semibold italic">
@@ -12,9 +12,9 @@ const TestimonialCard = ({ quote, highlight, author, role }) => {
             </span>
           )}
         </blockquote>
-        <footer className="border-t pt-4">
+        <footer className="border-t border-gray-700 pt-4">
           <cite className="not-italic">
-            <div className="font-semibold text-dark">{author}</div>
+            <div className="font-semibold text-white">{author}</div>
             <div className="text-muted text-sm">{role}</div>
           </cite>
         </footer>
