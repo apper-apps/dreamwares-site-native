@@ -52,7 +52,7 @@ const processStepsPhase1 = [
     }
   ];
 
-  const processStepsPhase2 = [
+const processStepsPhase2 = [
     {
       number: 1,
       title: "Consultation & Discovery",
@@ -80,21 +80,45 @@ const processStepsPhase1 = [
     }
   ];
 
+  const processStepsPhase3 = [
+    {
+      number: 1,
+      title: "Strategy & Planning",
+      description: "Define objectives, requirements, and comprehensive project roadmap"
+    },
+    {
+      number: 2,
+      title: "Design & Development",
+      description: "Create and build your solution using cutting-edge technologies"
+    },
+    {
+      number: 3,
+      title: "Testing & Optimization",
+      description: "Ensure quality, performance, and user experience excellence"
+    },
+    {
+      number: 4,
+      title: "Deployment & Growth",
+      description: "Launch successfully and scale your product for maximum impact"
+    }
+  ];
+
 const phases = [
     { segments: 6, steps: processStepsPhase1, name: "Phase 1: Complete Process", rotation: 0 },
-    { segments: 5, steps: processStepsPhase2, name: "Phase 2: Streamlined Process", rotation: 45 }
+    { segments: 5, steps: processStepsPhase2, name: "Phase 2: Streamlined Process", rotation: 45 },
+    { segments: 4, steps: processStepsPhase3, name: "Phase 3: Major Phases", rotation: 90 }
   ];
 const [currentPhase, setCurrentPhase] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  useEffect(() => {
+useEffect(() => {
     const phaseTimer = setTimeout(() => {
       setIsTransitioning(true);
       setTimeout(() => {
-        setCurrentPhase(1);
+        setCurrentPhase((prev) => (prev + 1) % phases.length);
         setIsTransitioning(false);
       }, 500);
-    }, 8000); // Switch to Phase 2 after 8 seconds
+    }, 8000); // Switch phases every 8 seconds
 
     return () => clearTimeout(phaseTimer);
   }, []);
