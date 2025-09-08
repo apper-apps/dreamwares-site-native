@@ -35,8 +35,8 @@ const Footer = () => {
   return (
     <footer className="relative py-16 px-10 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
       {/* Background Watermark */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <span className="text-[12rem] md:text-[20rem] font-bold text-white/5 select-none whitespace-nowrap">
+<div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <span className="text-[12rem] md:text-[20rem] font-bold text-white/10 select-none whitespace-nowrap">
           Dreamwares AI
         </span>
       </div>
