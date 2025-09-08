@@ -14,12 +14,12 @@
     scroll-behavior: smooth;
   }
   
-  body {
+body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     font-feature-settings: 'rlig' 1, 'calt' 1;
     line-height: 1.6;
-    color: #111827;
-    background-color: #FFFFFF;
+    color: #FFFFFF;
+    background-color: #0A0B1E;
   }
 }
 
@@ -59,8 +59,8 @@
     transition-delay: 750ms;
   }
   
-  .hero-gradient {
-    background: linear-gradient(135deg, #2563EB 0%, #8B5CF6 100%);
+.hero-gradient {
+    background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
   }
   
   .card-hover {
@@ -69,17 +69,17 @@
   
   .card-hover:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 20px 25px -5px rgba(139, 92, 246, 0.3), 0 10px 10px -5px rgba(139, 92, 246, 0.2);
   }
   
   .btn-primary {
-    background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+    background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   
   .btn-primary:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.4);
   }
   
   .process-line {
@@ -93,7 +93,7 @@
     right: -20px;
     width: 40px;
     height: 2px;
-    background: linear-gradient(90deg, #2563EB, #8B5CF6);
+background: linear-gradient(90deg, #8B5CF6, #EC4899);
     transform: translateY(-50%);
   }
   

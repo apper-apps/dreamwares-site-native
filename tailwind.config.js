@@ -6,14 +6,14 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        primary: '#2563EB',
-        secondary: '#8B5CF6',
-        accent: '#10B981',
-        surface: '#FFFFFF',
-        background: '#F9FAFB',
-        dark: '#111827',
-        muted: '#6B7280'
+colors: {
+        primary: '#8B5CF6',
+        secondary: '#EC4899',
+        accent: '#A855F7',
+        surface: '#1A1B2E',
+        background: '#0A0B1E',
+        dark: '#0A0B1E',
+        muted: '#9CA3AF'
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

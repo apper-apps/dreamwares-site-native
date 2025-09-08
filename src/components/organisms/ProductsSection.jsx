@@ -62,16 +62,16 @@ const ProductsSection = () => {
   ];
 
   return (
-    <section id="products" ref={sectionRef} className="py-20 bg-white">
+<section id="products" ref={sectionRef} className="py-20 bg-surface">
       <Container>
         <div className="text-center mb-16 animate-on-scroll stagger-1">
-          <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">
+<h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Our{" "}
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Success Stories
             </span>
           </h2>
-          <p className="text-xl text-muted max-w-3xl mx-auto">
+<p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Real products we've built that are transforming industries
           </p>
         </div>
@@ -86,22 +86,22 @@ const ProductsSection = () => {
             >
               {/* Product Info */}
               <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                <Card className="h-full">
+<Card className="h-full bg-background border-primary/20">
                   <div className="flex items-center mb-6">
-                    <div className={`w-12 h-12 bg-gradient-to-r ${product.gradient} rounded-xl flex items-center justify-center mr-4`}>
+                    <div className={`w-12 h-12 bg-gradient-to-r ${product.gradient} rounded-xl flex items-center justify-center mr-4 shadow-lg`}>
                       <ApperIcon name={product.icon} className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-dark">{product.name}</h3>
-                      <p className="text-muted">{product.tagline}</p>
+                      <h3 className="text-2xl font-bold text-white">{product.name}</h3>
+                      <p className="text-gray-300">{product.tagline}</p>
                     </div>
                   </div>
 
                   <ul className="space-y-3 mb-8">
                     {product.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center">
-                        <ApperIcon name="CheckCircle" className="w-5 h-5 text-accent mr-3" />
-                        <span className="text-gray-700">{feature}</span>
+                        <ApperIcon name="CheckCircle" className="w-5 h-5 text-primary mr-3" />
+                        <span className="text-gray-300">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -114,8 +114,8 @@ const ProductsSection = () => {
               </div>
 
               {/* Visual Placeholder */}
-              <div className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
-                <div className={`aspect-video bg-gradient-to-br ${product.gradient} rounded-2xl flex items-center justify-center shadow-2xl`}>
+<div className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
+                <div className={`aspect-video bg-gradient-to-br ${product.gradient} rounded-2xl flex items-center justify-center shadow-2xl backdrop-blur-sm border border-white/10`}>
                   <div className="text-center text-white">
                     <ApperIcon name={product.icon} className="w-16 h-16 mx-auto mb-4 opacity-80" />
                     <div className="text-xl font-semibold opacity-90">{product.name}</div>

@@ -11,7 +11,7 @@ const Container = forwardRef(({ children, size = "default", className, ...props 
   
   return (
     <div
-      ref={ref}
+ref={ref}
       className={cn("w-full mx-auto px-4 sm:px-6 lg:px-8", sizes[size], className)}
       {...props}
     >

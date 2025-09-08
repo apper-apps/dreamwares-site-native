@@ -5,7 +5,7 @@ import HomePage from "@/components/pages/HomePage";
 function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-white">
+<div className="min-h-screen bg-background">
         <Routes>
           <Route path="/" element={<HomePage />} />
         </Routes>
@@ -20,7 +20,7 @@ function App() {
           pauseOnFocusLoss
           draggable
           pauseOnHover
-          theme="light"
+theme="dark"
           style={{ zIndex: 9999 }}
         />
       </div>

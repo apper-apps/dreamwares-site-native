@@ -33,15 +33,15 @@ const Header = () => {
   };
 
   return (
-    <header className={cn(
+<header className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-      isScrolled ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-transparent"
+      isScrolled ? "bg-surface/95 backdrop-blur-md shadow-lg border-b border-primary/20" : "bg-transparent"
     )}>
       <Container>
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+<div className="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center shadow-lg">
               <ApperIcon name="Zap" className="w-6 h-6 text-white" />
             </div>
             <span className="ml-3 text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -69,10 +69,10 @@ const Header = () => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
-          >
+>
             <ApperIcon 
               name={isMobileMenuOpen ? "X" : "Menu"} 
-              className="w-6 h-6 text-dark" 
+              className="w-6 h-6 text-white"
             />
           </button>
         </div>
@@ -80,7 +80,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t shadow-lg">
+<div className="md:hidden bg-surface/95 backdrop-blur-md border-t border-primary/20 shadow-lg">
           <Container>
             <div className="py-4 space-y-4">
               {navItems.map((item) => (

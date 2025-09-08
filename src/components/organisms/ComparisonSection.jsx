@@ -61,16 +61,16 @@ const ComparisonSection = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-20 bg-background">
+<section ref={sectionRef} className="py-20 bg-surface">
       <Container>
         <div className="text-center mb-16 animate-on-scroll stagger-1">
-          <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">
+<h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             What Founders Really Want — And How{" "}
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Dreamwares Delivers It
             </span>
           </h2>
-          <p className="text-xl text-muted max-w-3xl mx-auto">
+<p className="text-xl text-gray-300 max-w-3xl mx-auto">
             See how we compare to traditional development approaches
           </p>
         </div>
@@ -78,21 +78,21 @@ const ComparisonSection = () => {
         <div className="animate-on-scroll stagger-2">
           <Card className="overflow-hidden">
             {/* Header */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 border-b pb-6 mb-6">
-              <div className="font-semibold text-dark text-center md:text-left">Category</div>
+<div className="grid grid-cols-1 md:grid-cols-4 gap-4 border-b border-primary/20 pb-6 mb-6">
+<div className="font-semibold text-white text-center md:text-left">Category</div>
               <div className="text-center">
-                <div className="font-semibold text-dark mb-1">Traditional Development</div>
-                <div className="text-sm text-muted">Slow & Expensive</div>
+                <div className="font-semibold text-white mb-1">Traditional Development</div>
+                <div className="text-sm text-gray-400">Slow & Expensive</div>
               </div>
               <div className="text-center">
-                <div className="font-semibold text-dark mb-1">Freelancers/Agencies</div>
-                <div className="text-sm text-muted">Inconsistent</div>
+                <div className="font-semibold text-white mb-1">Freelancers/Agencies</div>
+                <div className="text-sm text-gray-400">Inconsistent</div>
               </div>
               <div className="text-center">
                 <div className="font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-1">
                   Dreamwares AI
                 </div>
-                <div className="text-sm text-accent font-medium">The Better Way</div>
+                <div className="text-sm text-primary font-medium">The Better Way</div>
               </div>
             </div>
 
@@ -100,23 +100,23 @@ const ComparisonSection = () => {
             <div className="space-y-6">
               {comparisonData.map((row, index) => (
                 <div key={index} className="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
-                  <div className="font-medium text-dark text-center md:text-left">
+<div className="font-medium text-white text-center md:text-left">
                     {row.category}
                   </div>
                   
                   <div className="flex items-center justify-center md:justify-center space-x-2 text-center">
                     <ApperIcon name={row.traditional.icon} className={`w-5 h-5 ${row.traditional.color}`} />
-                    <span className="text-gray-600">{row.traditional.text}</span>
+                    <span className="text-gray-400">{row.traditional.text}</span>
                   </div>
                   
-                  <div className="flex items-center justify-center md:justify-center space-x-2 text-center">
+<div className="flex items-center justify-center md:justify-center space-x-2 text-center">
                     <ApperIcon name={row.freelancers.icon} className={`w-5 h-5 ${row.freelancers.color}`} />
-                    <span className="text-gray-600">{row.freelancers.text}</span>
+                    <span className="text-gray-400">{row.freelancers.text}</span>
                   </div>
                   
-                  <div className="flex items-center justify-center md:justify-center space-x-2 text-center bg-gradient-to-r from-accent/10 to-primary/10 rounded-lg py-2 px-3">
+                  <div className="flex items-center justify-center md:justify-center space-x-2 text-center bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg py-2 px-3 border border-primary/20">
                     <ApperIcon name={row.dreamwares.icon} className={`w-5 h-5 ${row.dreamwares.color}`} />
-                    <span className="font-medium text-dark">{row.dreamwares.text}</span>
+                    <span className="font-medium text-white">{row.dreamwares.text}</span>
                   </div>
                 </div>
               ))}

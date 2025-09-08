@@ -8,14 +8,13 @@ const Card = forwardRef(({
   className, 
   ...props 
 }, ref) => {
-  const baseStyles = "bg-white rounded-xl border border-gray-100 p-8 transition-all duration-300";
+const baseStyles = "bg-surface rounded-xl border border-primary/20 p-8 transition-all duration-300 backdrop-blur-sm";
   
-  const variants = {
+const variants = {
     default: "shadow-sm",
-    elevated: "shadow-lg",
-    outlined: "border-gray-200 shadow-none"
+    elevated: "shadow-lg shadow-primary/10",
+    outlined: "border-primary/20 shadow-none"
   };
-  
   const hoverStyles = hover ? "card-hover hover:border-primary/20" : "";
   
   return (

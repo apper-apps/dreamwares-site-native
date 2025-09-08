@@ -33,22 +33,22 @@ const CTASection = () => {
   ];
 
   return (
-    <section id="contact" ref={sectionRef} className="py-20 bg-gradient-to-r from-primary to-secondary">
+<section id="contact" ref={sectionRef} className="py-20 bg-gradient-to-r from-primary to-secondary relative overflow-hidden">
       <Container>
         <div className="text-center text-white animate-on-scroll stagger-1">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+<h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             Let's transform your ideas into action
           </h2>
-          <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto text-white">
             Ready to turn your vision into reality? Start with a free consultation and see how we can help you launch faster.
           </p>
 
           <div className="mb-8 animate-on-scroll stagger-2">
-            <Button 
+<Button 
               onClick={handleCTAClick}
               variant="secondary"
               size="lg"
-              className="bg-white text-primary hover:bg-gray-50 hover:transform hover:scale-105 transition-all duration-300"
+              className="bg-white text-primary hover:bg-gray-50 hover:transform hover:scale-105 transition-all duration-300 shadow-lg"
             >
               Start With a Chat
               <ApperIcon name="MessageCircle" className="w-5 h-5 ml-2" />
@@ -56,10 +56,10 @@ const CTASection = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 animate-on-scroll stagger-3">
-            {trustPoints.map((point, index) => (
+{trustPoints.map((point, index) => (
               <div key={index} className="flex items-center">
-                <ApperIcon name={point.icon} className="w-5 h-5 text-accent mr-2" />
-                <span className="opacity-90">{point.text}</span>
+                <ApperIcon name={point.icon} className="w-5 h-5 text-white mr-2" />
+                <span className="opacity-90 text-white">{point.text}</span>
               </div>
             ))}
           </div>

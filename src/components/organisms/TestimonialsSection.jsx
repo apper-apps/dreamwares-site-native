@@ -48,16 +48,16 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section id="testimonials" ref={sectionRef} className="py-20 bg-background">
+<section id="testimonials" ref={sectionRef} className="py-20 bg-background">
       <Container>
         <div className="text-center mb-16 animate-on-scroll stagger-1">
-          <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">
+<h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             What Our{" "}
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Clients Say
             </span>
           </h2>
-          <p className="text-xl text-muted max-w-3xl mx-auto">
+<p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Real stories from founders who transformed their ideas into successful products
           </p>
         </div>
