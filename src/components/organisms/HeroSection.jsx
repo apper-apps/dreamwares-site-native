@@ -54,12 +54,12 @@ const handleContactClick = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-electric-blue/20 to-neon-cyan/20 blur-2xl animate-pulse"></div>
             </h1>
             
-<p className="text-2xl text-cyber-silver leading-relaxed mb-10 relative">
+<div className="text-2xl text-cyber-silver leading-relaxed mb-10 relative">
               <span className="relative z-10 cyber-text-subtle">
                 With AI-powered development, Dreamwares helps non-technical founders launch in weeks, not months.
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan/10 to-transparent blur-xl"></div>
-            </p>
+            </div>
 
             {/* Value Props */}
             <div className="space-y-4 mb-10">
@@ -87,11 +87,11 @@ const handleContactClick = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-electric-blue/50 to-neon-cyan/50 animate-pulse"></div>
             </Button>
             
-<p className="text-lg text-cyber-silver cyber-text-subtle">
+<div className="text-lg text-cyber-silver cyber-text-subtle">
               <span className="inline-block w-2 h-2 bg-electric-blue rounded-full mr-2 animate-pulse"></span>
               Free consultation • No commitment required
               <span className="inline-block w-2 h-2 bg-neon-cyan rounded-full ml-2 animate-pulse"></span>
-            </p>
+            </div>
           </div>
 
           {/* Visual */}
